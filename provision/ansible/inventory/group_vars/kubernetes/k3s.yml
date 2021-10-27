@@ -20,7 +20,8 @@ k3s_debug: false
 k3s_etcd_datastore: true
 
 # (bool) Allow the use of unsupported configurations in k3s
-k3s_use_unsupported_config: false
+k3s_use_unsupported_config: true
+# k3s_use_unsupported_config: false # changed because https://github.com/k8s-at-home/template-cluster-k3s/issues/115
 
 # (string) Control Plane registration address
 k3s_registration_address: "{{ kubevip_address }}"
