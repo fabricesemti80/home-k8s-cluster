@@ -7,7 +7,6 @@ https://code-maven.com/enable-ansible-passwordless-sudo
 https://www.ssh.com/academy/ssh/copy-id
 https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
 
-
 ## My home setup
 
 | Node   | Role    | IP            | Network        | Gateway     |
@@ -19,7 +18,7 @@ https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generati
 | NAS    | storage | 192.168.3.1   | 192.168.0.0/16 | 192.168.1.1 |
 | router | router  | 192.168.1.1   | 192.168.0.0/16 | 192.168.1.1 |
 
-*note: the gaps in the addressings are intentional, as I plan to add further master/worker nodes*
+* note: the gaps in the addressings are intentional, as I plan to add further master/worker nodes*
 
 ## Preparation
 
@@ -36,10 +35,13 @@ ssh-copy-id -i ~/.ssh/id_ed25519 ubuntu@192.168.42.10
 
 ## Cluster provisioning
 
-New [guide](https://github.com/fabricesemti80/home-k8s-cluster)
-
-~~For this we will refer to [this guide](https://github.com/k3s-io/k3s-ansible)~~
-
-### Prep
+As the  [guide](https://github.com/fabricesemti80/home-k8s-cluster) is pretty good, I will not go through it myself. Only a few notes:
 
 * connect to each host via SSH before Ansible
+
+* Aadd this to ~/.bashrc to decrypt GPG keys
+
+```sh
+GPG_TTY=$(tty)
+export GPG_TTY
+```
